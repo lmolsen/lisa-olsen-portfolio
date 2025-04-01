@@ -5,9 +5,8 @@ import { useState } from "react";
 import "./Contact.scss";
 
 export default function Contact() {
+  const baseUrl = import.meta.env.VITE_API_URL;
 
-    const baseUrl = import.meta.env.VITE_API_URL;
-    
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,8 +25,10 @@ export default function Contact() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    setFormStatus("Sending...");
+
     try {
-await axios.post(`${baseUrl}/send-email`, formData);
+      await axios.post(`${baseUrl}/send-email`, formData);
       setFormStatus("Email sent successfully!");
       setFormData({ name: "", email: "", comment: "" });
     } catch (error) {
