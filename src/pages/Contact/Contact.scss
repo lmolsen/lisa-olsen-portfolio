@@ -1,0 +1,61 @@
+@use "../../styles/partials/global";
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.contact {
+    height: calc(100vh - 15rem);
+
+    @include tablet {
+        height: calc(100vh - 13rem);
+    }
+
+    &__container {
+        padding-top: 2rem;
+        @include flex-full(column, center, center);
+        @include container;
+    }
+
+    &__form {
+        width: 80%;
+        @include flex-align(column, center);
+
+        @include tablet {
+            width: 30rem;
+        }
+    }
+
+    &__label {
+        align-self: flex-start;
+        padding-bottom: 0.5rem;
+    }
+
+    &__field {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 2rem;
+        resize: vertical;
+    }
+
+    &__button {
+        border:none;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: $med-dark-color;
+        color: $light-color;
+
+        @include tablet {
+            font-size: 1rem;
+        }
+
+        &:hover {
+            background-color: $dark-color;
+        }
+    }
+
+    &__status {
+        padding-top: 1rem;
+        color: $dark-color;
+    }
+}
+
