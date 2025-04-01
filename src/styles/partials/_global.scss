@@ -1,0 +1,27 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./typography";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Figtree";
+    text-decoration: none;
+}
+
+h1,
+h2 {
+    padding-bottom: 1rem;
+    font-size: 1.25rem;
+
+    @include tablet {
+        font-size: 2rem;
+    }
+}
+
+p {
+    @include tablet {
+        font-size: 1.25rem;
+    }
+}

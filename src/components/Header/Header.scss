@@ -1,0 +1,32 @@
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
+.header {
+    background-color: $med-light-color;
+    height: 5rem;
+    padding: 1rem 0;
+
+    &__container {
+        width: 100%;
+        height: 100%;
+        @include flex-full(row, center, space-evenly);
+        @include container;
+
+        @include tablet {
+            justify-content: space-between;
+        }
+    }
+
+    &__link {
+        font-size: 1.25rem;
+        color: $dark-color;
+
+        &:hover {
+            color: $light-color;
+        }
+
+        @include tablet {
+            font-size: 1.75rem;
+        }
+    }
+}

@@ -1,0 +1,80 @@
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
+.footer {
+    background-color: $medium-color;
+    height: 10rem;
+    padding: 1rem 0;
+
+    @include tablet {
+        height: 8rem;
+    }
+
+    &__container {
+        width: 100%;
+        height: 100%;
+        @include flex-full(column, center, space-between);
+        @include container;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__social {
+        height: 100%;
+        @include flex-justify(column, flex-end);
+    }
+
+    &__icons {
+        gap: 1rem;
+        width: 100%;
+        padding-top: 1rem;
+        @include flex-full(row, center, space-evenly);
+
+        @include tablet {
+            justify-content: flex-start;
+        }
+    }
+
+    &__title {
+        text-transform: uppercase;
+        padding: 0;
+        color: $dark-color;
+        display: none;
+
+        @include tablet {
+            display: initial;
+        }
+    }
+
+    &__icon {
+        width: 4rem;
+        height: 4rem;
+
+        @include tablet {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        &--linkedin {
+            width: 4.5rem;
+            height: 4.5rem;
+
+            @include tablet {
+                width: 2.25rem;
+                height: 2.25rem;
+            }
+        }
+    }
+
+    &__copy {
+        width: 9rem;
+        height: 100%;
+        @include flex-full(column, center, flex-end);
+    }
+
+    &__text {
+        font-size: 0.75rem;
+    }
+}
