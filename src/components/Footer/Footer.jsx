@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <div className="footer__social">
-          <h3 className="footer__title">Socials</h3>
+        <div className="footer__profile">
+          <h3 className="footer__title">Profiles</h3>
           <div className="footer__icons">
             <a href="https://www.github.com/lmolsen" target="blank">
               <img src={github} className="footer__icon" alt="Github logo" />

@@ -20,6 +20,10 @@ h2 {
     }
 }
 
+h2 {
+    font-weight: 500;
+}
+
 p {
     @include tablet {
         font-size: 1.25rem;
