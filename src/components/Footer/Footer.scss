@@ -2,7 +2,7 @@
 @use "./../../styles/partials/mixins" as *;
 
 .footer {
-    background-color: $medium-color;
+    background-color: $secondary-bold-color;
     height: 10rem;
     padding: 1rem 0;
 
@@ -40,7 +40,7 @@
     &__title {
         text-transform: uppercase;
         padding: 0;
-        color: $dark-color;
+        color: $text-color;
         display: none;
 
         @include tablet {

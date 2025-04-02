@@ -2,7 +2,7 @@
 @use "./../../styles/partials/mixins" as *;
 
 .header {
-    background-color: $med-light-color;
+    background-color: $primary-bold-color;
     height: 5rem;
     padding: 1rem 0;
     // position: sticky;
@@ -22,10 +22,10 @@
 
     &__link {
         font-size: 1.25rem;
-        color: $dark-color;
+        color: $text-color;
 
         &:hover {
-            color: $light-color;
+            color: $secondary-background-color;
         }
 
         @include tablet {

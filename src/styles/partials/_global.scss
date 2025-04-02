@@ -7,7 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Figtree";
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 h1,
@@ -31,5 +31,7 @@ p {
 }
 
 .space {
-    padding-right: 1rem;
+    @media (hover: hover) and (pointer: fine) {
+            padding-right: 0.875rem;
+    }
 }

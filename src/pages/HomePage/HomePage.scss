@@ -7,7 +7,7 @@
     min-height: 100vh;
 
     &__hero {
-        background-color: $light-color;
+        background-color: $secondary-background-color;
     }
 
     &__hero-container {
@@ -34,7 +34,7 @@
     }
 
     &__title {
-        color: $dark-color;
+        color: $text-color;
 
         &--projects {
             text-transform: uppercase;
@@ -42,7 +42,7 @@
     }
 
     &__subtitle {
-        color: $med-dark-color;
+        color: $highlight-color;
     }
 
     &__text {
@@ -50,10 +50,10 @@
     }
 
     &__link {
-        color: $med-dark-color;
+        color: $highlight-color;
 
         &:hover {
-            color: $dark-color;
+            color: $text-color;
         }
     }
 
@@ -81,7 +81,7 @@
 
     &__projects {
         padding: 2rem 0;
-        background-color: white;
+        background-color: $primary-background-color;
     }
 
     &__carousel {
@@ -100,8 +100,8 @@
     }
 
     &__button {
-        background-color: $med-dark-color;
-        color: $light-color;
+        background-color: $highlight-color;
+        color: $secondary-background-color;
         border: none;
         border-radius: 0.5rem;
         padding: 0.75rem;
@@ -117,7 +117,7 @@
         }
 
         &:hover {
-            background-color: $dark-color;
+            background-color: $text-color;
         }
 
         &--prev {
