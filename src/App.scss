@@ -3,5 +3,23 @@
 @use "./styles/partials/mixins" as *;
 
 html {
-    scrollbar-gutter: stable;
+    scrollbar-color: $medium-color transparent;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $medium-color;
+    border-radius: 0.5rem;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: $med-dark-color;
 }

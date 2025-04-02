@@ -4,7 +4,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .home {
-    min-height: 80vh;
+    min-height: 100vh;
 
     &__hero {
         background-color: $light-color;

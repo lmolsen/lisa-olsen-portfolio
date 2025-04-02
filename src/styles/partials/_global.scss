@@ -7,7 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Figtree";
-    text-decoration: none;
+    text-decoration: none; 
 }
 
 h1,
@@ -28,4 +28,8 @@ p {
     @include tablet {
         font-size: 1.25rem;
     }
+}
+
+.space {
+    padding-right: 1rem;
 }

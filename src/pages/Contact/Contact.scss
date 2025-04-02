@@ -4,11 +4,12 @@
 @use "../../styles/partials/mixins" as *;
 
 .contact {
-    height: calc(100vh - 15rem);
+    min-height: calc(100vh - 15rem);
 
     @include tablet {
-        height: calc(100vh - 13rem);
+        min-height: calc(100vh - 13rem);
     }
+
 
     &__container {
         padding-top: 2rem;
@@ -22,6 +23,7 @@
 
         @include tablet {
             width: 30rem;
+            padding-bottom: 2rem;
         }
     }
 

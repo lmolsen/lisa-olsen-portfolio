@@ -1,10 +1,13 @@
 import "./Footer.scss";
 import github from "./../../assets/icons/github.png";
 import linkedin from "./../../assets/icons/linkedin.png";
+import { useLocation } from "react-router-dom";
 
 export default function Footer() {
+  const location = useLocation();
+
   return (
-    <footer className="footer">
+     <footer className={`footer ${location.pathname === "/contact" ? "space": ""}`}>
       <div className="footer__container">
         <div className="footer__profile">
           <h3 className="footer__title">Profiles</h3>
