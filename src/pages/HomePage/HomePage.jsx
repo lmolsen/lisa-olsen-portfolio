@@ -158,71 +158,78 @@ export default function HomePage() {
               </p>
             </section>
           </div>
-          <div className="home__block home__block--even">
-            <div className="home__block-container">
-              <h1 className="home__title home__title--upper">Skills</h1>
-              <div className="home__tags">
-                {skills.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="home__tag"
-                    onClick={(event) => playNote(skill.note, event)}
-                  >
-                    {skill.name}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="music-notes">
-              {musicNotes.map((note) => (
+        </div>
+        <div className="home__block home__block--even">
+          <div className="home__block-container">
+            <h1 className="home__title home__title--upper">Skills</h1>
+            <div className="home__tags">
+              {skills.map((skill, index) => (
                 <span
-                  key={note.id}
-                  className="music-note"
-                  style={{ left: note.x, top: note.y }}
+                  key={index}
+                  className="home__tag"
+                  onClick={(event) => playNote(skill.note, event)}
                 >
-                  🎵
+                  {skill.name}
                 </span>
               ))}
             </div>
           </div>
-          <div className="home__block">
-            <div className="home__block-container">
-              <h1 className="home__title home__title--upper">Projects</h1>
+          <div className="music-notes">
+            {musicNotes.map((note) => (
+              <span
+                key={note.id}
+                className="music-note"
+                style={{ left: note.x, top: note.y }}
+              >
+                🎵
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="home__block">
+          <div className="home__block-container">
+            <h1 className="home__title home__title--upper">Projects</h1>
 
-              <div className="home__carousel">
-                <button
-                  className="home__button home__button--prev"
-                  onClick={handlePrev}
-                >
-                  &#10094;
-                </button>
+            <div className="home__carousel">
+              <button
+                className="home__button home__button--prev"
+                onClick={handlePrev}
+              >
+                &#10094;
+              </button>
 
-                <div className="home__content">
-                  <video
-                    className="home__video"
-                    key={videos[currentIndex].id}
-                    controls
-                  >
-                    <source src={videos[currentIndex].src} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  <a
-                    className="home__link"
-                    href={videos[currentIndex].link}
-                    target="blank"
-                  >
-                    {videos[currentIndex].title}
-                  </a>
-                </div>
-                <button
-                  className="home__button home__button--next"
-                  onClick={handleNext}
+              <div className="home__content">
+                <video
+                  className="home__video"
+                  key={videos[currentIndex].id}
+                  controls
                 >
-                  &#10095;
-                </button>
+                  <source src={videos[currentIndex].src} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <a
+                  className="home__link"
+                  href={videos[currentIndex].link}
+                  target="blank"
+                >
+                  {videos[currentIndex].title}
+                </a>
               </div>
+              <button
+                className="home__button home__button--next"
+                onClick={handleNext}
+              >
+                &#10095;
+              </button>
             </div>
           </div>
+
+          {/* <div className="home__block">
+            <div className="home__block-container">
+              <h1 className="home__title home__title--upper">Editing</h1>
+        
+            </div>
+          </div> */}
         </div>
       </main>
       <Footer />
