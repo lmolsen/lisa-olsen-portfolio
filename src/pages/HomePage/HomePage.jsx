@@ -11,7 +11,7 @@ import triviaStation from "../../assets/videos/triviastation.mp4";
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [musicNotes, setMusicNotes] = useState([]);
-  const pianoRef = useRef(null);
+  const musicRef = useRef(null);
 
   const videos = [
     {
@@ -74,7 +74,7 @@ export default function HomePage() {
   ];
 
   useEffect(() => {
-    pianoRef.current = new Tone.PolySynth({
+    musicRef.current = new Tone.PolySynth({
       oscillator: {
         type: "sine",
       },
@@ -99,7 +99,7 @@ export default function HomePage() {
 
   const playNote = async (note, event) => {
     await Tone.start();
-    pianoRef.current.triggerAttackRelease(note, "8n");
+    musicRef.current.triggerAttackRelease(note, "8n");
 
     const tag = event.target;
     const newNote = {
@@ -158,6 +158,33 @@ export default function HomePage() {
               </p>
             </section>
           </div>
+          <div className="home__block home__block--even">
+            <div className="home__block-container">
+              <h1 className="home__title home__title--upper">Skills</h1>
+              <div className="home__tags">
+                {skills.map((skill, index) => (
+                  <span
+                    key={index}
+                    className="home__tag"
+                    onClick={(event) => playNote(skill.note, event)}
+                  >
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="music-notes">
+              {musicNotes.map((note) => (
+                <span
+                  key={note.id}
+                  className="music-note"
+                  style={{ left: note.x, top: note.y }}
+                >
+                  🎵
+                </span>
+              ))}
+            </div>
+          </div>
           <div className="home__block">
             <div className="home__block-container">
               <h1 className="home__title home__title--upper">Projects</h1>
@@ -194,33 +221,6 @@ export default function HomePage() {
                   &#10095;
                 </button>
               </div>
-            </div>
-          </div>
-          <div className="home__block home__block--odd">
-            <div className="home__block-container">
-              <h1 className="home__title home__title--upper">Skills</h1>
-              <div className="home__tags">
-                {skills.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="home__tag"
-                    onClick={(event) => playNote(skill.note, event)}
-                  >
-                    {skill.name}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="music-notes">
-              {musicNotes.map((note) => (
-                <span
-                  key={note.id}
-                  className="music-note"
-                  style={{ left: note.x, top: note.y }}
-                >
-                  🎵
-                </span>
-              ))}
             </div>
           </div>
         </div>

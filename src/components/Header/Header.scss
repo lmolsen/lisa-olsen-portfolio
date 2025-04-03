@@ -25,7 +25,7 @@
         color: $text-color;
 
         &:hover {
-            color: $secondary-background-color;
+            color: $primary-bg-color;
         }
 
         @include tablet {
