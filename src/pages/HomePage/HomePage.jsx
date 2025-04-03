@@ -1,5 +1,6 @@
 import "./HomePage.scss";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import * as Tone from "tone";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
@@ -9,6 +10,8 @@ import triviaStation from "../../assets/videos/triviastation.mp4";
 
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [musicNotes, setMusicNotes] = useState([]);
+  const pianoRef = useRef(null);
 
   const videos = [
     {
@@ -31,6 +34,59 @@ export default function HomePage() {
     },
   ];
 
+  const skills = [
+    { name: "HTML", note: "C4" },
+    { name: "CSS", note: "C#4" },
+    { name: "Sass", note: "D4" },
+    { name: "JavaScript", note: "D#4" },
+    { name: "React.js", note: "E4" },
+    { name: "Express.js", note: "F4" },
+    { name: "Node.js", note: "F#4" },
+    { name: "DOM", note: "G4" },
+    { name: "APIs", note: "G#4" },
+    { name: "MySQL", note: "A4" },
+    { name: "Jest", note: "A#4" },
+    { name: "OAuth", note: "B4" },
+    { name: "Motion", note: "C5" },
+    { name: "Git", note: "C#5" },
+    { name: "GitHub", note: "D5" },
+    { name: "Netlify", note: "D#5" },
+    { name: "Railway", note: "E5" },
+    { name: "Microsoft 365", note: "F5" },
+    { name: "Google Workspace", note: "F#5" },
+    { name: "Photoshop", note: "G5" },
+    { name: "Acrobat", note: "G#5" },
+    { name: "FrameMaker", note: "A5" },
+    { name: "LaTeX", note: "A#5" },
+    { name: "Notepad++", note: "B5" },
+    { name: "VS Code", note: "C6" },
+    { name: "Audacity", note: "C#6" },
+    { name: "OBS Studio", note: "D6" },
+    { name: "ClickUp", note: "D#6" },
+    { name: "Jira", note: "E6" },
+    { name: "Figma", note: "F6" },
+    { name: "Miro", note: "F#6" },
+    { name: "Notion", note: "G6" },
+    { name: "Agile", note: "G#6" },
+    { name: "Wordpress", note: "A6" },
+    { name: "Twine", note: "A#6" },
+    { name: "PBLA", note: "B6" },
+  ];
+
+  useEffect(() => {
+    pianoRef.current = new Tone.PolySynth({
+      oscillator: {
+        type: "sine",
+      },
+      envelope: {
+        attack: 0.1,
+        decay: 0.3,
+        sustain: 0.5,
+        release: 1,
+      },
+    }).toDestination();
+  }, []);
+
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % videos.length);
   };
@@ -39,6 +95,24 @@ export default function HomePage() {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + videos.length) % videos.length
     );
+  };
+
+  const playNote = async (note, event) => {
+    await Tone.start();
+    pianoRef.current.triggerAttackRelease(note, "8n");
+
+    const tag = event.target;
+    const newNote = {
+      id: Math.random(),
+      x: tag.offsetLeft + tag.offsetWidth / 2 - 18,
+      y: tag.offsetTop - 30,
+    };
+
+    setMusicNotes((prev) => [...prev, newNote]);
+
+    setTimeout(() => {
+      setMusicNotes((prev) => prev.filter((note) => note.id !== newNote.id));
+    }, 1000);
   };
 
   return (
@@ -84,9 +158,9 @@ export default function HomePage() {
               </p>
             </section>
           </div>
-          <div className="home__projects">
-            <div className="home__projects-container">
-              <h1 className="home__title home__title--projects">Projects</h1>
+          <div className="home__block">
+            <div className="home__block-container">
+              <h1 className="home__title home__title--upper">Projects</h1>
 
               <div className="home__carousel">
                 <button
@@ -120,6 +194,33 @@ export default function HomePage() {
                   &#10095;
                 </button>
               </div>
+            </div>
+          </div>
+          <div className="home__block home__block--odd">
+            <div className="home__block-container">
+              <h1 className="home__title home__title--upper">Skills</h1>
+              <div className="home__tags">
+                {skills.map((skill, index) => (
+                  <span
+                    key={index}
+                    className="home__tag"
+                    onClick={(event) => playNote(skill.note, event)}
+                  >
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="music-notes">
+              {musicNotes.map((note) => (
+                <span
+                  key={note.id}
+                  className="music-note"
+                  style={{ left: note.x, top: note.y }}
+                >
+                  🎵
+                </span>
+              ))}
             </div>
           </div>
         </div>
