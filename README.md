@@ -12,4 +12,4 @@ A site to display my portfolio.
 2. Open in VS Code
 3. Open a terminal and enter "npm install"
 4. In the terminal, enter "npm run dev" 
-5. Download the repo from https://github.com/lmolsen/lisa-olsen-portfolio-server and repeat instructions there
+5. Repeat instructions for https://github.com/lmolsen/lisa-olsen-portfolio-server

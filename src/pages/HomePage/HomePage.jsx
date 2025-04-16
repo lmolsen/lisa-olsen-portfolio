@@ -7,6 +7,7 @@ import Footer from "../../components/Footer/Footer";
 import gamebookWeb from "../../assets/videos/gamebook.mp4";
 import pawfectMatch from "../../assets/videos/pawfectmatch.mp4";
 import triviaStation from "../../assets/videos/triviastation.mp4";
+import artistWebsite from "../../assets/videos/artist-website.mp4";
 
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,12 +23,18 @@ export default function HomePage() {
     },
     {
       id: 2,
+      src: artistWebsite,
+      title: "Artist Website",
+      link: "https://github.com/munchkinlander/munchkinland-website",
+    },
+    {
+      id: 3,
       src: pawfectMatch,
       title: "Pawfect Match",
       link: "https://github.com/reneecwl/pawfect-match",
     },
     {
-      id: 3,
+      id: 4,
       src: triviaStation,
       title: "TriviaStation",
       link: "https://github.com/lmolsen/TriviaStation",
@@ -125,7 +132,7 @@ export default function HomePage() {
             <section className="home__intro">
               <h1 className="home__title">Lisa Olsen</h1>
               <h2 className="home__subtitle">
-                Editor | Educator | Software Engineer
+                Editor | Educator | Software Developer
               </h2>
               <p className="home__text">
                 Welcome to my portfolio! I'm a recent Software Engineering
