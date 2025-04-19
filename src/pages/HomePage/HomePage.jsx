@@ -25,7 +25,7 @@ export default function HomePage() {
       id: 2,
       src: artistWebsite,
       title: "Artist Website",
-      link: "https://github.com/munchkinlander/munchkinland-website",
+      link: "https://munchkinlander.netlify.app",
     },
     {
       id: 3,
