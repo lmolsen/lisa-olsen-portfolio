@@ -5,9 +5,10 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 import gamebookWeb from "../../assets/videos/gamebook.mp4";
+import artistWebsite from "../../assets/videos/artist-website.mp4";
+import lilGuy from "../../assets/videos/LilGuy.mp4";
 import pawfectMatch from "../../assets/videos/pawfectmatch.mp4";
 import triviaStation from "../../assets/videos/triviastation.mp4";
-import artistWebsite from "../../assets/videos/artist-website.mp4";
 
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,14 +30,20 @@ export default function HomePage() {
     },
     {
       id: 3,
-      src: pawfectMatch,
-      title: "Pawfect Match",
-      link: "https://github.com/reneecwl/pawfect-match",
+      src: lilGuy,
+      title: "LilGuy (Team Hackathon)",
+      link: "https://lilguy.vercel.app/",
     },
     {
       id: 4,
+      src: pawfectMatch,
+      title: "Pawfect Match (Team Hackathon)",
+      link: "https://github.com/reneecwl/pawfect-match",
+    },
+    {
+      id: 5,
       src: triviaStation,
-      title: "TriviaStation",
+      title: "TriviaStation (Team Hackathon)",
       link: "https://github.com/lmolsen/TriviaStation",
     },
   ];
