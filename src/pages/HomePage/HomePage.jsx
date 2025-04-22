@@ -6,9 +6,13 @@ import Footer from "../../components/Footer/Footer";
 
 import gamebookWeb from "../../assets/videos/gamebook.mp4";
 import artistWebsite from "../../assets/videos/artist-website.mp4";
-import lilGuy from "../../assets/videos/LilGuy.mp4";
+import lilGuy from "../../assets/videos/lil-guy.mp4";
 import pawfectMatch from "../../assets/videos/pawfectmatch.mp4";
 import triviaStation from "../../assets/videos/triviastation.mp4";
+import instock from "../../assets/videos/instock.mp4";
+import snaps from "../../assets/videos/snaps.mp4";
+import bandsite from "../../assets/videos/bandsite.mp4";
+import coffee from "../../assets/videos/coffee-shop.mp4";
 
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,14 +41,38 @@ export default function HomePage() {
     {
       id: 4,
       src: pawfectMatch,
-      title: "Pawfect Match (Team Hackathon)",
-      link: "https://github.com/reneecwl/pawfect-match",
+      title: "Pawfect Match (Paired Hackathon)",
+      link: "https://github.com/lmolsen/pawfect-match",
     },
     {
       id: 5,
       src: triviaStation,
-      title: "TriviaStation (Team Hackathon)",
+      title: "TriviaStation (Paired Hackathon)",
       link: "https://github.com/lmolsen/TriviaStation",
+    },
+    {
+      id: 6,
+      src: instock,
+      title: "Instock (Group Assignment)",
+      link: "https://github.com/lmolsen/team5-instock",
+    },
+    {
+      id: 7,
+      src: snaps,
+      title: "Snaps (Assignment)",
+      link: "https://github.com/lmolsen/lisa-olsen-snaps",
+    },
+    {
+      id: 8,
+      src: bandsite,
+      title: "BandSite (Assignment)",
+      link: "https://github.com/lmolsen/lisa-olsen-bandsite",
+    },
+    {
+      id: 9,
+      src: coffee,
+      title: "Coffee Shop (Assignment)",
+      link: "https://github.com/lmolsen/lisa-olsen-coffeeshop",
     },
   ];
 
@@ -84,7 +112,7 @@ export default function HomePage() {
     { name: "Agile", note: "G#6" },
     { name: "Wordpress", note: "A6" },
     { name: "Twine", note: "A#6" },
-    { name: "PBLA", note: "B6" },
+    { name: "Nodemailer", note: "B6" },
   ];
 
   useEffect(() => {
@@ -142,7 +170,7 @@ export default function HomePage() {
                 Editor | Educator | Software Developer
               </h2>
               <p className="home__text">
-                Welcome to my portfolio! I'm a recent Software Engineering
+                Welcome to my portfolio! I'm a Software Engineering
                 bootcamp grad with a background in education, editing, and
                 technical writing.
               </p>
