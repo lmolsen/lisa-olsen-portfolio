@@ -21,7 +21,10 @@ export default function Header() {
     <>
       <header
         className={`header ${
-          location.pathname != "/software-dev" ? "space" : ""
+          location.pathname === "/contact" ||
+          location.pathname === "/"
+            ? "space"
+            : ""
         }`}
       >
         <div className="header__container">
@@ -67,35 +70,33 @@ export default function Header() {
         </div>
       </header>
 
-
-        <div className={`modal ${isModalOpen ? "modal--open" : ""}`}>
-          <button className="modal__close" onClick={toggleModal}>
-            ✕
-          </button>
-          <nav className="modal__menu">
-            <Link
-              className="modal__link"
-              to="/software-dev"
-              onClick={toggleModal}
-            >
-              Software Development
-            </Link>
-            <Link className="modal__link" to="/writing" onClick={toggleModal}>
-              Writing & Poetry
-            </Link>
-            <Link
-              className="modal__link"
-              to="/freelance-services"
-              onClick={toggleModal}
-            >
-              Freelance Services
-            </Link>
-            <Link className="modal__link" to="/contact" onClick={toggleModal}>
-              Contact
-            </Link>
-          </nav>
-        </div>
-    
+      <div className={`modal ${isModalOpen ? "modal--open" : ""}`}>
+        <button className="modal__close" onClick={toggleModal}>
+          ✕
+        </button>
+        <nav className="modal__menu">
+          <Link
+            className="modal__link"
+            to="/software-dev"
+            onClick={toggleModal}
+          >
+            Software Development
+          </Link>
+          <Link className="modal__link" to="/writing" onClick={toggleModal}>
+            Writing & Poetry
+          </Link>
+          <Link
+            className="modal__link"
+            to="/freelance-services"
+            onClick={toggleModal}
+          >
+            Freelance Services
+          </Link>
+          <Link className="modal__link" to="/contact" onClick={toggleModal}>
+            Contact
+          </Link>
+        </nav>
+      </div>
     </>
   );
 }

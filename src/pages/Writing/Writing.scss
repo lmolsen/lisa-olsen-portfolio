@@ -1,0 +1,115 @@
+@use "../../styles/partials/global";
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.writing {
+    min-height: calc(100vh - 15rem);
+    background-color: $primary-bg-color;
+
+    @include tablet {
+        min-height: calc(100vh - 13rem);
+    }
+
+    &__container {
+        @include flex-full(column, center, center);
+        @include container;
+    }
+
+
+    &__title {
+        color: $text-color;
+
+        &--upper {
+            text-transform: uppercase;
+        }
+    }
+
+
+    &__block {
+        padding: 2rem 0;
+        background-color: $primary-bg-color;
+
+        &--even {
+            background-color: $secondary-bg-color;
+        }
+    }
+
+    &__link {
+        padding: 0.75rem;
+        color: $highlight-color;
+
+        @include tablet {
+            font-size: 1.25rem;
+        }
+
+        &:hover {
+            color: $text-color;
+        }
+    }
+
+}
+
+.writing__block {
+    padding: 2rem 0;
+}
+
+
+.writing__entry {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    width: 80%;
+
+    &--even {
+        flex-direction: row;
+    }
+
+    &--odd {
+        flex-direction: row-reverse;
+            justify-self: flex-end;
+    }
+
+    .writing__image {
+        width: 12.5rem;
+        object-fit: cover;
+        object-position: bottom;
+        height: 9.375rem;
+        border-radius: .5rem;
+        box-shadow: 0 .25rem .5rem rgba(0, 0, 0, 0.1);
+
+        &--top {
+            object-position: top;
+        }
+
+        &--center {
+            object-position: center;
+        }
+    }
+
+    .writing__text {
+        @include flex-justify(column, center);
+    }
+
+    .writing__journal {
+        color: $text-color;
+        margin-bottom: 1rem;
+
+        &--squish {
+            width: 70%;
+        }
+    }
+
+    .writing__poem {
+        font-size: 1.5rem;
+        color: $highlight-color;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            color: $text-color;
+        }
+
+    }
+}
