@@ -228,7 +228,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-        <div className="home__block">
+        {/* <div className="home__block">
           <div className="home__block-container">
             <h1 className="home__title home__title--upper">Projects</h1>
 
@@ -264,7 +264,7 @@ export default function HomePage() {
                 &#10095;
               </button>
             </div>
-          </div>
+          </div> */}
 
           {/* <div className="home__block">
             <div className="home__block-container">
@@ -272,7 +272,7 @@ export default function HomePage() {
         
             </div>
           </div> */}
-        </div>
+        {/* </div> */}
       </main>
       <Footer />
     </>
