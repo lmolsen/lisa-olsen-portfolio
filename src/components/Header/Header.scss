@@ -12,17 +12,23 @@
     &__container {
         width: 100%;
         height: 100%;
-        @include flex-full(row, center, space-evenly);
+        @include flex-full(row, center, space-between);
         @include container;
+    }
 
-        @include tablet {
-            justify-content: space-between;
-        }
+    &__block {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
     }
 
     &__link {
         font-size: 1.25rem;
         color: $text-color;
+
+        &--icon {
+            line-height: 0;
+        }
 
         &:hover {
             color: $primary-bg-color;
@@ -30,6 +36,116 @@
 
         @include tablet {
             font-size: 1.75rem;
+        }
+    }
+
+    &__icon {
+        height: 2rem;
+        padding: 0 2rem;
+
+        &:hover {
+            filter: invert(100%);
+        }
+
+        @include tablet {
+            padding: 0;
+        }
+    }
+
+    &__dropdown {
+        position: relative;
+    }
+
+    &__dropdown-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        gap: 0.25rem;
+    }
+
+    &__dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $secondary-bg-color;
+        box-shadow: 0 .125rem .375rem rgba(0, 0, 0, 0.15);
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        min-width: 12.5rem;
+    }
+
+    &__dropdown-item {
+        padding: 0.75rem 1rem;
+        text-decoration: none;
+        color: $text-color;
+        white-space: nowrap;
+
+        &:hover {
+            background-color: $highlight-color;
+            color: $secondary-bg-color;
+        }
+    }
+}
+
+.mobile {
+    @include tablet {
+        display: none;
+    }
+}
+
+.tablet {
+    display: none;
+
+    @include tablet {
+        display: initial;
+    }
+}
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $secondary-bg-color;
+    @include flex-full(column, center, center);
+    z-index: 1000;
+    padding: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+
+    &--open {
+        transform: translateX(0%);
+    }
+
+    &__close {
+        position: absolute;
+        top: 1.5rem;
+        right: 2rem;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: $text-color;
+        cursor: pointer;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    &__link {
+        font-size: 1.5rem;
+        color: $text-color;
+        text-decoration: none;
+
+        &:hover {
+            color: $highlight-color;
         }
     }
 }
