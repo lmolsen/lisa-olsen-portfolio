@@ -74,10 +74,12 @@
     }
 
     &__dropdown-button::after {
+        @include tablet{
         content: '▾';
         transition: transform 0.3s ease;
         display: inline-block;
         transform: translateY(0.2rem);
+        }
     }
 
     &__dropdown-menu {
