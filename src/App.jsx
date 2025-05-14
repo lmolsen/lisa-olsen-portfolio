@@ -14,10 +14,11 @@ import antifa from "./assets/images/antifa.png";
 import io from "./assets/images/io.png";
 import pithy from "./assets/images/pithy.png";
 import emergence from "./assets/images/emergence.png";
+import profilePic from "./assets/images/ProfilePic.jpg";
 
 function App() {
     useEffect(() => {
-      const images = [heron, quiet, antifa, io, pithy, emergence];
+      const images = [heron, quiet, antifa, io, pithy, emergence, profilePic];
 
       images.forEach((image) => {
         const img = new Image();
