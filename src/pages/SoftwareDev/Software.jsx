@@ -62,7 +62,7 @@ export default function Software() {
       title: "InStock (Group Assignment)",
       link: "https://github.com/lmolsen/team5-instock",
       description:
-        "Made with React, SCSS, Express, and SQL for database management, InStock is a warehouse/inventory management app featuring full CRUD functionality and responsive design. This was a group assignment following Agile methodology, with tasks tracked on Jira. I took a lead role, completing a large proportion of both back-end and front-end tasks, ensuring consistency across pages and components, and keeping the team on track.",
+        "Made with React, SCSS, Express, and SQL for database management, InStock is a warehouse/inventory management app featuring full CRUD functionality and responsive design. This was a group assignment using Agile methodology, with tasks tracked on Jira. I took a lead role, completing a large proportion of both back-end and front-end tasks, ensuring consistency across pages and components, and keeping the team on track.",
     },
     {
       id: 7,

@@ -7,7 +7,13 @@ export default function Footer() {
   const location = useLocation();
 
   return (
-     <footer className={`footer ${location.pathname === "/contact" ? "space": ""}`}>
+    <footer
+      className={`footer ${
+        location.pathname === "/contact" || location.pathname === "/"
+          ? "space"
+          : ""
+      }`}
+    >
       <div className="footer__container">
         <div className="footer__profile">
           <h3 className="footer__title">Profiles</h3>
