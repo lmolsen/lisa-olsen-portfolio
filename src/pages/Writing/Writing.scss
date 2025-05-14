@@ -48,68 +48,77 @@
         }
     }
 
-}
-
-.writing__block {
-    padding: 2rem 0;
-}
-
-
-.writing__entry {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    width: 80%;
-
-    &--even {
-        flex-direction: row;
-    }
-
-    &--odd {
-        flex-direction: row-reverse;
-            justify-self: flex-end;
-    }
-
-    .writing__image {
+    &__entry {
+        gap: 2rem;
+        margin-bottom: 3rem;
         width: 12.5rem;
-        object-fit: cover;
-        object-position: bottom;
-        height: 9.375rem;
-        border-radius: .5rem;
-        box-shadow: 0 .25rem .5rem rgba(0, 0, 0, 0.1);
+        @include flex-align(column, center);
 
-        &--top {
-            object-position: top;
+        @include tablet {
+                width: 80%;
+        }
+  
+        &--even {
+
+            @include tablet {
+                flex-direction: row;
+            }
         }
 
-        &--center {
-            object-position: center;
+        &--odd {
+
+            @include tablet {
+                flex-direction: row-reverse;
+                justify-self: flex-end;
+            }
         }
     }
+        &__image {
+            width: 12.5rem;
+            object-fit: cover;
+            object-position: bottom;
+            height: 9.375rem;
+            border-radius: .5rem;
+            box-shadow: 0 .25rem .5rem rgba(0, 0, 0, 0.1);
 
-    .writing__text {
-        @include flex-justify(column, center);
-    }
+            &--top {
+                object-position: top;
+            }
 
-    .writing__journal {
-        color: $text-color;
-        margin-bottom: 1rem;
-
-        &--squish {
-            width: 70%;
+            &--center {
+                object-position: center;
+            }
         }
-    }
 
-    .writing__poem {
-        font-size: 1.5rem;
-        color: $highlight-color;
-        font-weight: bold;
-        text-decoration: none;
+        &__text {
+            @include flex-justify(column, center);
+        }
 
-        &:hover {
-            text-decoration: underline;
+        &__journal {
             color: $text-color;
+            margin-bottom: 1rem;
+
+            &--squish {
+                @include tablet{
+                width: 70%;
+                }
+            }
         }
 
+        &__poem {
+    
+            color: $highlight-color;
+            font-weight: bold;
+            text-decoration: none;
+
+            @include tablet {
+                    font-size: 1.5rem;
+            }
+
+            &:hover {
+                text-decoration: underline;
+                color: $text-color;
+            }
+
+        }
     }
-}

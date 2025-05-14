@@ -195,7 +195,7 @@ export default function HomePage() {
                 — and hope to contribute to more games in the near future.
               </p>
               <p className="home__text">
-                Check out some of my recent projects and feel free to reach out
+                Check out some of my recent and past projects and feel free to reach out
                 if you'd like to chat or collaborate!
               </p>
             </section>

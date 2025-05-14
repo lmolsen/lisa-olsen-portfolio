@@ -1,0 +1,74 @@
+@use "../../styles/partials/global";
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.freelance {
+
+    min-height: calc(100vh - 15rem);
+    background-color: $primary-bg-color;
+
+    @include tablet {
+        min-height: calc(100vh - 13rem);
+    }
+
+    &__container {
+        @include flex-full(column, center, center);
+        @include container;
+    }
+
+
+    &__title {
+        color: $text-color;
+
+        &--upper {
+            text-transform: uppercase;
+        }
+    }
+
+    &__block {
+        padding: 2rem 0;
+        background-color: $primary-bg-color;
+
+        &--even {
+            background-color: $secondary-bg-color;
+        }
+    }
+
+    &__lists {
+        padding-top: 1rem;
+        width: 80%;
+        gap: 2rem;
+        font-size: 0.75rem;
+        @include flex-justify(row, space-evenly);
+
+        @include tablet {
+            gap: 1rem;
+            width: 50%;
+            font-size: 1rem;
+        }
+    }
+
+    &__review {
+        width: 80%;
+    }
+
+    &__text {
+        font-style: italic;
+        padding-bottom: 0.75rem;
+    }
+
+    &__rating {
+        text-align: right;
+        padding-bottom: 1.5rem;
+    }
+
+    &__stars {
+        color: rgb(252, 183, 35);
+
+        &--reduced {
+        display: inline-block;
+            clip-path: inset(0 20% 0 0);
+        }
+    }
+}
