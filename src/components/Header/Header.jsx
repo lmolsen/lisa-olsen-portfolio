@@ -21,8 +21,7 @@ export default function Header() {
     <>
       <header
         className={`header ${
-          location.pathname === "/contact" ||
-          location.pathname === "/"
+          location.pathname === "/contact" || location.pathname === "/"
             ? "space"
             : ""
         }`}
@@ -39,6 +38,7 @@ export default function Header() {
             >
               <button className="header__link header__dropdown-button tablet">
                 Showcase
+                {/* <span className="header__dropdown-arrow">▾</span> */}
               </button>
               {isDropdownOpen && (
                 <div className="header__dropdown-menu">

@@ -58,8 +58,13 @@
     }
 
     &__rating {
+        font-size: 0.75rem;
         text-align: right;
         padding-bottom: 1.5rem;
+
+        @include tablet {
+            font-size: 1rem;
+        }
     }
 
     &__stars {
