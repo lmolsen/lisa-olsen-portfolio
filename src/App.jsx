@@ -5,6 +5,7 @@ import Software from "./pages/SoftwareDev/Software";
 import Freelance from "./pages/FreelanceServices/Freelance";
 import Writing from "./pages/Writing/Writing";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 
 // preload images
 import heron from "./assets/images/heron.png";
