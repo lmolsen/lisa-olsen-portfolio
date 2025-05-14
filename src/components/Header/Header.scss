@@ -10,10 +10,15 @@
     // z-index: 10;
 
     &__container {
-        width: 100%;
+        // width: 100%;
         height: 100%;
         @include flex-full(row, center, space-between);
         @include container;
+        margin: 0 2rem;
+
+        @include tablet {
+            margin: auto;
+        }
     }
 
     &__block {
@@ -41,14 +46,8 @@
 
     &__icon {
         height: 2rem;
-        padding: 0 2rem;
-
         &:hover {
             filter: invert(100%);
-        }
-
-        @include tablet {
-            padding: 0;
         }
     }
 
@@ -61,7 +60,7 @@
             }
 
             .header__dropdown-button::after {
-                transform: rotate(180deg);
+                transform: rotate(180deg) translateY(-0.1rem);
             }
         }
     }
@@ -74,11 +73,11 @@
     }
 
     &__dropdown-button::after {
-        @include tablet{
-        content: '▾';
-        transition: transform 0.3s ease;
-        display: inline-block;
-        transform: translateY(0.2rem);
+        @include tablet {
+            content: '▾';
+            transition: transform 0.3s ease;
+            display: inline-block;
+            transform: translateY(0.2rem);
         }
     }
 
