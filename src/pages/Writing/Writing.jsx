@@ -96,7 +96,7 @@ export default function Writing() {
             <div className="writing__entry writing__entry--odd">
               <img
                 src={io}
-                alt="iō Literary Journal vol 3"
+                alt="iō Literary Journal vol. 3"
                 className="writing__image writing__image--top"
               />
               <div className="writing__text">
@@ -109,7 +109,7 @@ export default function Writing() {
                   Hemoptysis
                 </a>
                 <p className="writing__journal">
-                  iō Literary Journal (vol 3, 2020)
+                  iō Literary Journal (vol. 3, 2020)
                 </p>
               </div>
             </div>
