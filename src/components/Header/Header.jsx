@@ -48,6 +48,9 @@ export default function Header() {
                   <Link className="header__dropdown-item" to="/writing">
                     Writing & Poetry
                   </Link>
+                  <Link className="header__dropdown-item" to="/design">
+                    Design
+                  </Link>
                   <Link
                     className="header__dropdown-item"
                     to="/freelance-services"
@@ -91,6 +94,13 @@ export default function Header() {
             onClick={toggleModal}
           >
             Freelance Services
+          </Link>
+          <Link
+            className="modal__link"
+            to="/design"
+            onClick={toggleModal}
+          >
+            Design
           </Link>
           <Link className="modal__link" to="/contact" onClick={toggleModal}>
             Contact

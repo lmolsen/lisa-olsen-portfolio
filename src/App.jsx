@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import Software from "./pages/SoftwareDev/Software";
 import Freelance from "./pages/FreelanceServices/Freelance";
 import Writing from "./pages/Writing/Writing";
+import Design from "./pages/Design/Design";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/software-dev" element={<Software />} />
         <Route path="/freelance-services" element={<Freelance />} />
         <Route path="/writing" element={<Writing />} />
+        <Route path="/design" element={<Design />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
