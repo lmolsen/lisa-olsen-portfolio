@@ -12,7 +12,7 @@ import diagram from "../../assets/images/LI_diagram.png";
 import diagramPDF from "../../assets/pdfs/LI_diagram.pdf";
 import item from "../../assets/pdfs/UP_item-presentation.pdf";
 import transport from "../../assets/pdfs/TW_transport.pdf";
-import tattoo from "../../assets/pdfs/FL_tattoo.pdf";
+import tattoo from "../../assets/pdfs/SD_tattoo.pdf";
 
 export default function Design() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -175,7 +175,7 @@ export default function Design() {
                 <iframe
                   src={tattoo}
                   className="design__pdf"
-                  title="Item Presentation PDF"
+                  title="Tattoo Shop Info PDF"
                   draggable="false"
                   onContextMenu={preventRightClick}
                 ></iframe>
