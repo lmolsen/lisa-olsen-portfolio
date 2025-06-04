@@ -54,9 +54,11 @@
 
     &__pdf {
         height: 23rem;
+        width: 17rem;
 
         @include tablet {
             height: 28rem;
+            width: 100%;
         }
     }
 
